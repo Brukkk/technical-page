@@ -1,0 +1,181 @@
+/*RESETS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+
+html,body{
+	scroll-behavior: smooth;
+	scroll-padding-top: 25px; /* replace adding positive padding and negative margin */
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+:root{
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 1.15rem;
+	background-color: #dee2e6;
+	--clr-primary: #f8f9fa;
+	--clr-ascent: #adb5bd;
+	--clr-dark: #495057;
+	--clr-darker: #212529;
+}
+
+@keyframes example{
+	0%{
+		outline: 1px solid var(--clr-dark);
+		
+	}
+	50% {
+		outline: 4px solid var(--clr-darker);
+	}
+
+	75%{
+		outline: 3px solid var(--clr-dark);
+	}
+
+	90%{
+		outline: 2px solid var(--clr-ascent);
+
+	}
+	100% {
+		outline: none;
+	}
+}
+
+
+#navbar{
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 1;
+	min-width:280px;
+	width: 300px;
+	height: 100%;
+	border-right: 3px solid var(--clr-dark);
+	
+}
+
+
+#navbar header{
+	font-size: 1.8em;
+	margin:15px;
+	text-align: center;
+}
+
+#navbar ul{
+	
+	/* A height is needed for fixed navbar due to we wouldn't be able to get all bottom items without it*/
+	height: 88%;
+	overflow-y: auto;
+  	overflow-x: hidden; /* let us scroll */ 
+}
+
+#navbar li{
+	border-top: 2px solid var(--clr-dark);
+
+
+}
+
+#navbar a{
+	display: block;
+	padding: 0.75rem 1.2rem;
+	
+	color: #000;
+	text-decoration: none;
+}
+
+
+#main-doc{
+	
+	position: relative;
+	margin-left: 320px;
+	padding: 2rem;
+}
+
+#main-doc header{
+	
+	padding-top: 30px;
+	margin-top: -30px; 
+	font-size: 1.5rem;
+	margin:0.85em 0;
+}
+
+#main-doc article{
+	font-size: 0.90rem;
+	
+	margin: 1em 1.75em;
+
+}
+
+
+#main-doc section:target {
+	animation-name: example;
+  	animation-duration: 0.5s;
+	animation-timing-function: ease;
+	animation-delay: 0.3s;
+}
+
+
+
+
+section  p{
+	margin: 1em 0;
+}
+
+section li{
+	margin: 15px 0 0 10px;
+}
+section ul{
+	padding-left: 2rem;
+}
+
+code{
+	display: block;
+	font-family: monospace;
+	background-color: gray;
+	margin: 0.8rem;
+	padding:1rem;
+	
+}
+
+@media (max-width: 650px){
+	#navbar {
+		position:absolute;
+		top:0;
+		z-index: 1;
+		width:100%;
+		max-height: 325px;
+		border-bottom: 2px solid;
+
+	}
+
+	#navbar ul{
+		height: 250px;
+	}
+
+	#main-doc {
+		position: relative;
+		margin-left: 0;
+		margin-top: 300px;
+	}
+
+}
